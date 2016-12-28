@@ -6,8 +6,10 @@
 </head>
 <body>
 
-<!--要想热加载模块修改文件自动更改浏览器内容，这里只能直接引入bundle.js-->
-<script src="bundle.js"></script>
+<!--要想热加载模块修改文件自动更改浏览器内容，这里只能直接引入bundle.js
+原理：webpack-dev-server是打包在内存中，webpack才是生成bundle.js文件
+-->
+<script src="build.js"></script>
 
 </body>
 </html>

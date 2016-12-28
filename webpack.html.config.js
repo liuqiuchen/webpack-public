@@ -5,11 +5,13 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     //entry: './app/index.js',
     entry: {
-        build: './app/index.js'
+        build: './app/index.js',
+        abc: './app/abc.js'
     },
     output: {
         path: './build/',
-        filename: 'build.js'
+        //filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [
@@ -35,6 +37,11 @@ module.exports = {
         new htmlWebpackPlugin({
             title: '欢迎',
             chunks: ['build']
+        }),
+        new htmlWebpackPlugin({
+            title: '欢迎',
+            filename: 'class.html',
+            chunks: ['abc']  // 规定引入的模块
         })
     ]
 };

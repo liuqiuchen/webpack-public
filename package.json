@@ -308,11 +308,15 @@
     "xtend": "^4.0.1",
     "yargs": "^3.10.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "html-webpack-plugin": "^2.24.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
-    "build": "webpack-dev-server --port 3000 --hot --inline"
+    "start_html": "webpack --config webpack.html.config.js",
+    "start_es6": "webpack --config webpack.es6.config.js",
+    "build": "webpack-dev-server --port 3000 --hot --inline --content-base ./build/"
   },
   "keywords": [],
   "author": "",

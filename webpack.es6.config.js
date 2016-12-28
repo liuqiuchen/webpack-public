@@ -5,11 +5,13 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     //entry: './app/index.js',
     entry: {
-        build: './app/index.js'
+        build: './es6/index.js',
+        test: './es6/test.js'
     },
     output: {
-        path: './build/',
-        filename: 'build.js'
+        path: './es6_build/',
+        //filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [
