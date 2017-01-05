@@ -6,11 +6,10 @@ const path = require('path');
 module.exports = {
     //entry: './app/index.js',
     entry: {
-        build: './es6/index.js',
-        test: './es6/test.js'
+        build: './react/index.js'
     },
     output: {
-        path: './es6_build/',
+        path: './react_build/',
         //filename: 'bundle.js'
         filename: '[name].js'
     },
@@ -22,10 +21,17 @@ module.exports = {
                 exclude: '/node_modules/'
             },
             {
-                test: /.js$/,
-                loader: 'babel-loader',
-                exclude: '/node_modules/',
-                include: path.resolve(__dirname, '/es6/')
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                include: path.resolve(__dirname, 'react'),
+                // 写成'babel?presets[]=es2015&presets[]=react'，就不用query了
+                // cnpm install react-hot-loader --save-dev
+                /**
+                 * react的热加载，默认启动webpack-dev-server的时候改变入口文件的jsx的组件，
+                 * 浏览器会全页刷新更新数据。有了热加载，分离出来的组件（非入口文件）更改时，
+                 * 浏览器会更新数据但不会刷新页面。
+                 */
+                loaders: ['react-hot', 'babel?presets[]=es2015&presets[]=react'],
             }
         ]
     },

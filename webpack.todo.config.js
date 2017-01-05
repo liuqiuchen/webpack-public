@@ -1,3 +1,6 @@
+/**
+ * Created by lqcdsns on 2017/1/5.
+ */
 // 自动生成html文件
 // npm install html-webpack-plugin --save-dev
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,11 +9,10 @@ const path = require('path');
 module.exports = {
     //entry: './app/index.js',
     entry: {
-        build: './es6/index.js',
-        test: './es6/test.js'
+        build: './todo/index.jsx'
     },
     output: {
-        path: './es6_build/',
+        path: './todo_build/',
         //filename: 'bundle.js'
         filename: '[name].js'
     },
@@ -22,10 +24,10 @@ module.exports = {
                 exclude: '/node_modules/'
             },
             {
-                test: /.js$/,
+                test: /.jsx$/,
                 loader: 'babel-loader',
                 exclude: '/node_modules/',
-                include: path.resolve(__dirname, '/es6/')
+                include: path.resolve(__dirname, '/todo/')
             }
         ]
     },
