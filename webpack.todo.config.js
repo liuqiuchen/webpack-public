@@ -24,10 +24,12 @@ module.exports = {
                 exclude: '/node_modules/'
             },
             {
-                test: /.jsx$/,
+                test: /\.jsx|.js$/,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
-                exclude: '/node_modules/',
-                include: path.resolve(__dirname, '/todo/')
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     },

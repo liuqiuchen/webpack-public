@@ -325,9 +325,11 @@
     "start_html": "webpack --config webpack.html.config.js",
     "start_es6": "webpack --config webpack.es6.config.js",
     "start_react": "webpack --config webpack.react.config.js",
+    "start_todo": "webpack --config webpack.todo.config.js",
     "build": "webpack-dev-server --port 3000 --hot --inline --content-base ./build/",
     "build_es6": "webpack-dev-server --port 4000 --hot --inline --config webpack.es6.config.js",
-    "build_react": "webpack-dev-server --port 4000 --hot --inline --config webpack.react.config.js"
+    "build_react": "webpack-dev-server --port 4000 --hot --inline --config webpack.react.config.js",
+    "build_todo": "webpack-dev-server --port 4000 --hot --inline --config webpack.todo.config.js"
   },
   "keywords": [],
   "author": "",

@@ -11,14 +11,23 @@ let extend = (...args) => {
 	return newObj;
 }
 
-let store = (namespace, data) => {
+/*let store = (namespace, data) => {
 	if (data) {
 		return localStorage.setItem(namespace, JSON.stringify(data));
 	}
 
 	var store = localStorage.getItem(namespace);
 	return (store && JSON.parse(store)) || [];
-}
+}*/
+
+// 两个参数是setItem，一个参数是getItem
+let store = (namespace, data) => {
+    if(data) {
+        return localStorage.setItem(namespace, JSON.stringify(data));
+    }
+    let store = localStorage.getItem(namespace);
+    return (store && JSON.parse(store)) || [];
+};
 
 let hasOwn = {}.hasOwnProperty;
 let classNames = (...args) => {
